@@ -74,3 +74,46 @@ def wei_to_ether(wei):
         float: Equivalent amount in ether.
     """
     return web3.fromWei(wei, 'ether')
+
+
+def get_ethereum_price(api_key):
+    """
+    Retrieve Ethereum price and market cap data from CoinMarketCap API.
+
+    Args:
+        api_key (str): Your CoinMarketCap API key.
+
+    Returns:
+        dict: Ethereum price and market cap data.
+    """
+    try:
+        # CoinMarketCap API URL for Ethereum data
+        url = (
+            "https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest"
+        )
+
+        # Set the parameters for the API request
+        params = {
+            "symbol": "ETH",  # Symbol for Ethereum
+            "convert": "USD",  # Convert prices to USD
+        }
+
+        # Set your CoinMarketCap API key in the headers
+        headers = {
+            "X-CMC_PRO_API_KEY": api_key,
+        }
+
+        # Make the API request
+        response = requests.get(url, params=params, headers=headers)
+
+        # Check if the request was successful
+        if response.status_code == 200:
+            data = response.json()
+            ethereum_data = data["data"]["ETH"]
+            return ethereum_data
+        else:
+            print("Error:", response.status_code, response.text)
+            return None
+    except Exception as e:
+        print("Error:", e)
+        return None
