@@ -12,7 +12,8 @@ infura_api_key = creds.get("infura_api_key", "")
 # Your CoinMarketCap API key
 api_key = coinmarketcap_api_key
 infura_url = f"https://mainnet.infura.io/v3/{infura_api_key}"
-web3 = Web3(Web3.HTTPProvider(infura_url))
+web3 = Web3(Web3.HTTPProvider(
+    "https://mainnet.infura.io/v3/your_infura_project_id"))
 
 
 def display_transaction_info(tx):
