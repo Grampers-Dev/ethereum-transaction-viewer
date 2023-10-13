@@ -117,3 +117,20 @@ def get_ethereum_price(api_key):
     except Exception as e:
         print("Error:", e)
         return None
+
+
+def calculate_percentage_difference(value1, value2):
+    """
+    Calculate the percentage difference between two values.
+
+    Args:
+        value1 (float): The first value.
+        value2 (float): The second value.
+
+    Returns:
+        float: The percentage difference between value2 and value1.
+    """
+    if value1 == 0:
+        return 0  # Handle division by zero
+    return ((value2 - value1) / value1) * 100
+
