@@ -3,7 +3,7 @@ import json
 import requests
 
 # Specify the full file path to 'creds.json'
-creds_file_path = "/path/to/your/creds.json"
+creds_file_path = "/workspaces/ethereum-transaction-viewer/creds.json"
 
 try:
     with open(creds_file_path) as creds_file:
