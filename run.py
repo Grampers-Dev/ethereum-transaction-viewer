@@ -3,7 +3,7 @@ import json
 import requests
 
 # Load API keys from creds.json
-with open("creds.json") as creds_file:
+with open("ethereum-transaction-viewer/creds.json") as creds_file:
     creds = json.load(creds_file)
 
 coinmarketcap_api_key = creds.get("coinmarketcap_api_key", "")
