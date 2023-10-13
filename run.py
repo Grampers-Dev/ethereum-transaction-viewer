@@ -73,7 +73,7 @@ def wei_to_ether(wei):
     Returns:
         float: Equivalent amount in ether.
     """
-    return web3.fromWei(wei, 'ether')
+    return web3(wei, 'ether')
 
 
 def get_ethereum_price(api_key):
