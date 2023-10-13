@@ -60,3 +60,16 @@ def get_transaction_info(block_hash):
             print("Transaction not found.")
     except Exception as e:
         print("Error:", e)
+
+
+def wei_to_ether(wei):
+    """
+    Convert wei to ether.
+
+    Args:
+        wei (int): Amount in wei to be converted.
+
+    Returns:
+        float: Equivalent amount in ether.
+    """
+    return web3.fromWei(wei, 'ether')
