@@ -2,9 +2,19 @@ from web3 import Web3
 import json
 import requests
 
-# Load API keys from creds.json
-with open("creds.json") as creds_file:
-    creds = json.load(creds_file)
+# Specify the full file path to 'creds.json'
+creds_file_path = "/path/to/your/creds.json"
+
+try:
+    with open(creds_file_path) as creds_file:
+        creds = json.load(creds_file)
+        # Your code using 'creds' goes here
+except FileNotFoundError:
+    print("The 'creds.json' file was not found. Please check the file path.")
+except json.JSONDecodeError:
+    print("Error decoding 'creds.json'. Please ensure it is a valid JSON file.")
+except Exception as e:
+    print(f"An error occurred: {e}")
 
 coinmarketcap_api_key = creds.get("coinmarketcap_api_key", "")
 infura_api_key = creds.get("infura_api_key", "")
