@@ -1,29 +1,17 @@
 from web3 import Web3
-import json
+import os
+from dotenv import load_dotenv
 import requests
 
-# Specify the full file path to 'creds.json'
-creds_file_path = "/workspaces/ethereum-transaction-viewer/creds.json"
+# Load environment variables from .env.apikeys
+load_dotenv(dotenv_path='.env.apikeys')
 
-try:
-    with open(creds_file_path) as creds_file:
-        creds = json.load(creds_file)
-        # Your code using 'creds' goes here
-except FileNotFoundError:
-    print("The 'creds.json' file was not found. Please check the file path.")
-except json.JSONDecodeError:
-    print("Error decoding 'creds.json'. Please ensure it is a valid JSON file.")
-except Exception as e:
-    print(f"An error occurred: {e}")
+# Access the variables
+import os
 
-coinmarketcap_api_key = creds.get("coinmarketcap_api_key", "")
-infura_api_key = creds.get("infura_api_key", "")
-
-# Your CoinMarketCap API key
-api_key = coinmarketcap_api_key
-infura_url = f"https://mainnet.infura.io/v3/{infura_api_key}"
-web3 = Web3(Web3.HTTPProvider(
-    "https://mainnet.infura.io/v3/your_infura_project_id"))
+infura_url = os.getenv("INFURA_URL")
+web3 = Web3(Web3.HTTPProvider(infura_url))
+api_key = os.getenv("CMC_API_KEY")
 
 
 def display_transaction_info(tx):
