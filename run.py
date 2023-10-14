@@ -6,8 +6,6 @@ import requests
 # Load environment variables from .env.apikeys
 load_dotenv(dotenv_path='.env.apikeys')
 
-# Access the variables
-import os
 
 infura_url = os.getenv("INFURA_URL")
 web3 = Web3(Web3.HTTPProvider(infura_url))
