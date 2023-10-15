@@ -12,6 +12,18 @@ web3 = Web3(Web3.HTTPProvider(infura_url))
 api_key = os.getenv("CMC_API_KEY")
 
 
+def get_latest_block_hash():
+    """
+    Get the hash of the latest Ethereum block.
+
+    Returns:
+    block_hash: The hash of the latest Ethereum block.
+    """
+    latest_block = web3.eth.get_block('latest')
+    block_hash = latest_block.hash.hex()
+    return block_hash
+
+
 def display_transaction_info(tx):
     """
     Display transaction information.
@@ -224,6 +236,7 @@ def main():
             # You can continue to use the existing block_hash
             get_transaction_info(block_hash)
         elif selection.lower() == 'price':
+            print("Fetching Ethereum price data...")
             new_block, new_block_hash = get_latest_block_data()
             new_ethereum_data = get_ethereum_price(api_key)
             new_ethereum_price = new_ethereum_data["quote"]["USD"]["price"]
@@ -235,6 +248,7 @@ def main():
             market_cap_difference_percentage = calculate_percentage_difference(
                 latest_market_cap, new_market_cap)
 
+            print(f"Block Number: {new_block.number}")
             print("Percentage Difference in Ethereum Price with Latest Block:",
                   price_difference_percentage)
             print("Percentage Difference in Market Cap with Latest Block:",
@@ -253,6 +267,9 @@ def main():
         elif selection.lower() == 'blocks':
             handle_blocks_selection(
                 block_history, latest_ethereum_price, latest_market_cap)
+        elif selection.lower() == 'blockhash':
+            latest_block_hash = get_latest_block_hash()
+            print(f"Latest Block Hash: {latest_block_hash}")
 
 
 if __name__ == "__main__":
