@@ -42,6 +42,18 @@ This Python script serves as an interactive tool for users interested in explori
 
 The primary objective of the application is to empower users to explore Ethereum transactions and monitor Ethereum's real-time price, facilitating a better understanding of the cryptocurrency ecosystem.
 
+## User Stories
+
+- **Blockchain Enthusiasts:** For blockchain enthusiasts, the Ethereum Transaction Viewer offers the ability to explore Ethereum transactions, keeping them up-to-date with the latest developments in the Ethereum network.
+
+- **Crypto Investors:** Individuals interested in cryptocurrency investments can use the Ethereum Transaction Viewer to monitor the real-time price of Ethereum (ETH) and analyze it in comparison to the latest block, aiding their investment decisions.
+
+- **Historical Data Analysts:** Users looking to understand the historical performance of Ethereum can specify a number of previous blocks to compare with the latest block. This feature enables them to analyze percentage differences in Ethereum price and market capitalization over time.
+
+- **Researchers:** Researchers investigating Ethereum's blockchain can gather valuable transaction information and insights using the Ethereum Transaction Viewer, enhancing their understanding of this blockchain technology.
+
+- **Educators:** Educators in the field of blockchain and cryptocurrencies can recommend the Ethereum Transaction Viewer to their students as a practical tool for exploring real-world transactions and monitoring Ethereum's price, thereby facilitating the learning process.
+
 ## Usage
 
 Upon running the script, you will be presented with the following options:
@@ -77,7 +89,7 @@ Calculates the percentage difference between two values.
 
 ###The technology used in this project is as follows:
 
-- [Python](https://en.wikipedia.org/wiki/Python_(programming_language)) Python is a versatile and high-level programming language known for its simplicity and readability, suitable for a wide range of applications.
+- [Python](https://en.wikipedia.org/wiki/Python_(programming_language)) - Python is a versatile and high-level programming language known for its simplicity and readability, suitable for a wide range of applications.
 
 - [Code Institute Python Essentials Template](https://github.com/Code-Institute-Org/p3-template) - GitHub repository template used to create the repository.
 
@@ -87,15 +99,15 @@ Calculates the percentage difference between two values.
 
 - [GitHub](https://github.com/) - Git repository hosting service with a web-based graphical interface.
 
-- [Web3](https://pypi.org/project/web3/) A Python library for interacting with the Ethereum blockchain. It provides the necessary functionality to connect to an Ethereum node, retrieve blockchain data, and work with Ethereum transactions.
+- [Web3](https://pypi.org/project/web3/) - A Python library for interacting with the Ethereum blockchain. It provides the necessary functionality to connect to an Ethereum node, retrieve blockchain data, and work with Ethereum transactions.
 
-- [Python-Dotenv](https://pypi.org/project/python-dotenv/) A Python library used for loading environment variables from a .env file. It helps securely manage sensitive information like API keys and URLs.
+- [Python-Dotenv](https://pypi.org/project/python-dotenv/) - A Python library used for loading environment variables from a .env file. It helps securely manage sensitive information like API keys and URLs.
 
-- [Requests](https://pypi.org/project/requests/) A Python library for making HTTP requests. It's used in this script to communicate with the CoinMarketCap API to retrieve Ethereum price and market cap data.
+- [Requests](https://pypi.org/project/requests/) - A Python library for making HTTP requests. It's used in this script to communicate with the CoinMarketCap API to retrieve Ethereum price and market cap data.
 
-- [Infura](https://www.infura.io/) Infura provides Ethereum nodes as a service. It's likely used as the Ethereum node provider for interacting with the Ethereum blockchain.
+- [Infura](https://www.infura.io/) - Infura provides Ethereum nodes as a service. It's likely used as the Ethereum node provider for interacting with the Ethereum blockchain.
 
-- [CoinMarketCap](https://pro.coinmarketcap.com/) The script uses the CoinMarketCap API to obtain real-time data on Ethereum's price and market capitalization. Users need an API key from CoinMarketCap to access this data.
+- [CoinMarketCap](https://pro.coinmarketcap.com/) - The script uses the CoinMarketCap API to obtain real-time data on Ethereum's price and market capitalization. Users need an API key from CoinMarketCap to access this data.
 
 These technologies are integrated to create an application that allows users to explore Ethereum transactions and monitor the real-time price of Ethereum.
 
