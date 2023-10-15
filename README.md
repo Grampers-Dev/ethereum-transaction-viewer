@@ -1,32 +1,72 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Ethereum Transaction Viewer
 
-Welcome,
+Welcome to the Ethereum Transaction Viewer! This Python script allows you to explore Ethereum (Eth) blocks and Ethereum price using the Web3 library and CoinMarketCap API. You can perform the following actions:
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **March 14, 2023**
+- Get transaction information for the latest block.
+- Retrieve the current Ethereum price and compare it to the latest block.
+- Specify the number of previous blocks to compare with the latest block.
+- Exit the program.
 
-## Reminders
+## Prerequisites
 
-- Your code must be placed in the `run.py` file
-- Your dependencies must be placed in the `requirements.txt` file
-- Do not edit any of the other files or your code may not deploy properly
+Before using this script, make sure you have the following prerequisites in place:
 
-## Creating the Heroku app
+1. **Python**: You need to have Python installed on your system. You can download Python from the [official website](https://www.python.org/downloads/).
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+2. **Required Python Libraries**:
+   - `web3`: You can install it using pip: `pip install web3`
+   - `dotenv`: Install using `pip install python-dotenv`
+   - `requests`: Install using `pip install requests`
 
-1. `heroku/python`
-2. `heroku/nodejs`
+3. **Ethereum Node**: You need access to an Ethereum node to use the Web3 library. You can either run a local Ethereum node or use an external node provider.
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+4. **CoinMarketCap API Key**: To retrieve Ethereum price and market cap data, you'll need to obtain an API key from CoinMarketCap: [Sign up here](https://pro.coinmarketcap.com/signup/)
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+## Getting Started
 
-Connect your GitHub repository and deploy as normal.
+1. Create a `.env.apikeys` file in the same directory as this script and add your environment variables as follows:
 
-## Constraints
+   ```env
+   INFURA_URL=<Your Infura URL>
+   CMC_API_KEY=<Your CoinMarketCap API Key>
+Replace <Your Infura URL> with the URL of your Ethereum node provider, and <Your CoinMarketCap API Key> with your CoinMarketCap API key.
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+## Usage
 
----
+Upon running the script, you will be presented with the following options:
 
-Happy coding!
+- Enter 'info' to get transaction information for the latest block.
+- Enter 'price' to get the current Ethereum price and compare it to the latest block.
+- Enter 'blocks' to specify the number of previous blocks to compare with the latest block.
+- Enter 'exit' to quit the program.
+
+## Functions
+
+### `display_transaction_info(tx)`
+
+This function displays transaction information for a given transaction.
+
+### `get_transaction_info(block_hash)`
+
+Retrieves and displays transaction information for a given block hash.
+
+### `wei_to_ether(wei)`
+
+Converts an amount in Wei to Ether.
+
+### `get_ethereum_price(api_key)`
+
+Retrieves Ethereum price and market cap data from CoinMarketCap API using your API key.
+
+### `calculate_percentage_difference(value1, value2)`
+
+Calculates the percentage difference between two values.
+
+## Example Usage
+
+Here is an example of how you can use this script:
+
+1. Enter 'info' to get transaction information for the latest block.
+2. Enter 'price' to get the current Ethereum price and compare it to the latest block.
+3. Enter 'blocks' to specify the number of previous blocks to compare.
+4. Enter 'exit' to quit the program.
