@@ -11,36 +11,34 @@ Welcome to the Ethereum Transaction Viewer! This Python script enables you to ex
 
 Before using this script, please ensure you have the following prerequisites in place:
 
-1. **Python**: Make sure you have Python installed on your system. You can download Python from the [official website](https://www.python.org/downloads/).
+- **Python:** Make sure you have Python installed on your system. You can download Python from the [official website](https://www.python.org/).
 
-2. **Required Python Libraries**:
-   - `web3`: You can install it using pip: `pip install web3`
-   - `python-dotenv`: Install using `pip install python-dotenv`
-   - `requests`: Install using `pip install requests`
+- **Required Python Libraries:**
+    - web3: You can install it using pip: `pip install web3`
+    - python-dotenv: Install using `pip install python-dotenv`
+    - requests: Install using `pip install requests`
 
-3. **Ethereum Node**: You need access to an Ethereum node to use the Web3 library. You can either run a local Ethereum node or use an external node provider.
+- **Ethereum Node:** You need access to an Ethereum node to use the Web3 library. You can either run a local Ethereum node or use an external node provider.
 
-4. **CoinMarketCap API Key**: To retrieve Ethereum price and market cap data, you'll need to obtain an API key from CoinMarketCap. You can sign up for one [here](https://pro.coinmarketcap.com/signup/).
+- **CoinMarketCap API Key:** To retrieve Ethereum price and market cap data, you'll need to obtain an API key from CoinMarketCap. You can sign up for one [here](https://coinmarketcap.com/).
 
 ## Purpose and Goals of the Application
 
-### Purpose
-
+**Purpose:**
 This Python script serves as an interactive tool for users interested in exploring the Ethereum blockchain and monitoring the price of Ethereum (ETH) from CoinMarketCap. It provides the following functions:
 
-### Goals
+**Goals:**
+1. **Transaction Information:** Allow users to retrieve and display detailed information about transactions on the Ethereum blockchain. Users can explore specific transaction details, including block number, sender, receiver, gas, and more.
 
-1. **Transaction Information**: Allow users to retrieve and display detailed information about transactions on the Ethereum blockchain. Users can explore specific transaction details, including block number, sender, receiver, gas, and more.
+2. **Ethereum Price Tracking:** Enable users to obtain real-time data on the price of Ethereum (ETH) in USD and compare it to the latest block. This feature helps users stay updated on the cryptocurrency market.
 
-2. **Ethereum Price Tracking**: Enable users to obtain real-time data on the price of Ethereum (ETH) in USD and compare it to the latest block. This feature helps users stay updated on the cryptocurrency market.
+3. **Historical Data Comparison:** Allow users to specify a number of previous blocks to compare with the latest block. The script calculates and displays the percentage differences in Ethereum price and market capitalization between the latest block and the selected historical blocks.
 
-3. **Historical Data Comparison**: Allow users to specify a number of previous blocks to compare with the latest block. The script calculates and displays the percentage differences in Ethereum price and market capitalization between the latest block and the selected historical blocks.
+4. **User-Friendly Interface:** Provide a user-friendly command-line interface with clear instructions and prompts for available actions, such as 'info,' 'price,' 'blocks,' and 'exit.'
 
-4. **User-Friendly Interface**: Provide a user-friendly command-line interface with clear instructions and prompts for available actions, such as 'info,' 'price,' 'blocks,' and 'exit.'
+5. **Continuous Updates:** Ensure the script continuously updates and tracks the latest block's data and Ethereum price, providing users with the most up-to-date information.
 
-5. **Continuous Updates**: Ensure the script continuously updates and tracks the latest block's data and Ethereum price, providing users with the most up-to-date information.
-
-6. **Error Handling**: Implement robust error handling to gracefully manage network issues, API errors, and invalid user inputs, enhancing the application's reliability.
+6. **Error Handling:** Implement robust error handling to gracefully manage network issues, API errors, and invalid user inputs, enhancing the application's reliability.
 
 The primary objective of the application is to empower users to explore Ethereum transactions and monitor Ethereum's real-time price, facilitating a better understanding of the cryptocurrency ecosystem.
 
@@ -79,17 +77,17 @@ Calculates the percentage difference between two values.
 
 The technology used in this project is as follows:
 
-1. **Python**: The primary programming language for developing the script.
+- **Python:** The primary programming language for developing the script.
 
-2. **Web3**: A Python library for interacting with the Ethereum blockchain. It provides the necessary functionality to connect to an Ethereum node, retrieve blockchain data, and work with Ethereum transactions.
+- **Web3:** A Python library for interacting with the Ethereum blockchain. It provides the necessary functionality to connect to an Ethereum node, retrieve blockchain data, and work with Ethereum transactions.
 
-3. **python-dotenv**: A Python library used for loading environment variables from a `.env` file. It helps securely manage sensitive information like API keys and URLs.
+- **python-dotenv:** A Python library used for loading environment variables from a .env file. It helps securely manage sensitive information like API keys and URLs.
 
-4. **Requests**: A Python library for making HTTP requests. It's used in this script to communicate with the CoinMarketCap API to retrieve Ethereum price and market cap data.
+- **Requests:** A Python library for making HTTP requests. It's used in this script to communicate with the CoinMarketCap API to retrieve Ethereum price and market cap data.
 
-5. **Infura**: Infura provides Ethereum nodes as a service. It's likely used as the Ethereum node provider for interacting with the Ethereum blockchain.
+- **Infura:** Infura provides Ethereum nodes as a service. It's likely used as the Ethereum node provider for interacting with the Ethereum blockchain.
 
-6. **CoinMarketCap API**: The script uses the CoinMarketCap API to obtain real-time data on Ethereum's price and market capitalization. Users need an API key from CoinMarketCap to access this data.
+- **CoinMarketCap API:** The script uses the CoinMarketCap API to obtain real-time data on Ethereum's price and market capitalization. Users need an API key from CoinMarketCap to access this data.
 
 These technologies are integrated to create an application that allows users to explore Ethereum transactions and monitor the real-time price of Ethereum.
 
