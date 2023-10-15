@@ -22,14 +22,28 @@ Before using this script, make sure you have the following prerequisites in plac
 
 4. **CoinMarketCap API Key**: To retrieve Ethereum price and market cap data, you'll need to obtain an API key from CoinMarketCap: [Sign up here](https://pro.coinmarketcap.com/signup/)
 
-## Getting Started
+## Purpose and Goals of the Application
 
-1. Create a `.env.apikeys` file in the same directory as this script and add your environment variables as follows:
+### Purpose
 
-   ```env
-   INFURA_URL=<Your Infura URL>
-   CMC_API_KEY=<Your CoinMarketCap API Key>
-Replace <Your Infura URL> with the URL of your Ethereum node provider, and <Your CoinMarketCap API Key> with your CoinMarketCap API key.
+The purpose of the Python script is to serve as an interactive tool for users interested in exploring the Ethereum blockchain and monitoring the price of Ethereum (ETH) from CoinMarketCap. It provides the following functions:
+
+### Goals
+
+1. **Transaction Information**: Allow users to retrieve and display detailed information about transactions on the Ethereum blockchain. Users can explore specific transaction details, including block number, sender, receiver, gas, and more.
+
+2. **Ethereum Price Tracking**: Enable users to obtain real-time data on the price of Ethereum (ETH) in USD and compare it to the latest block. This feature helps users stay updated on the cryptocurrency market.
+
+3. **Historical Data Comparison**: Allow users to specify a number of previous blocks to compare with the latest block. The script calculates and displays the percentage differences in Ethereum price and market capitalization between the latest block and the selected historical blocks.
+
+4. **User-Friendly Interface**: Provide a user-friendly command-line interface with clear instructions and prompts for available actions, such as 'info,' 'price,' 'blocks,' and 'exit.'
+
+5. **Continuous Updates**: Ensure the script continuously updates and tracks the latest block's data and Ethereum price, providing users with the most up-to-date information.
+
+6. **Error Handling**: Implement robust error handling to gracefully manage network issues, API errors, and invalid user inputs, enhancing the application's reliability.
+
+The application's primary objective is to empower users to explore Ethereum transactions and monitor Ethereum's real-time price, facilitating a better understanding of the cryptocurrency ecosystem.
+
 
 ## Usage
 
