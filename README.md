@@ -1,6 +1,6 @@
 # Ethereum Transaction Viewer
 
-Welcome to the Ethereum Transaction Viewer! This Python script allows you to explore Ethereum (ETH) blocks and Ethereum price using the Web3 library and CoinMarketCap API. You can perform the following actions:
+Welcome to the Ethereum Transaction Viewer! This Python script enables you to explore Ethereum (ETH) blocks and Ethereum's price using the Web3 library and CoinMarketCap API. You can perform the following actions:
 
 - Get transaction information for the latest block.
 - Retrieve the current Ethereum price and compare it to the latest block.
@@ -9,24 +9,24 @@ Welcome to the Ethereum Transaction Viewer! This Python script allows you to exp
 
 ## Prerequisites
 
-Before using this script, make sure you have the following prerequisites in place:
+Before using this script, please ensure you have the following prerequisites in place:
 
-1. **Python**: You need to have Python installed on your system. You can download Python from the [official website](https://www.python.org/downloads/).
+1. **Python**: Make sure you have Python installed on your system. You can download Python from the [official website](https://www.python.org/downloads/).
 
 2. **Required Python Libraries**:
    - `web3`: You can install it using pip: `pip install web3`
-   - `dotenv`: Install using `pip install python-dotenv`
+   - `python-dotenv`: Install using `pip install python-dotenv`
    - `requests`: Install using `pip install requests`
 
 3. **Ethereum Node**: You need access to an Ethereum node to use the Web3 library. You can either run a local Ethereum node or use an external node provider.
 
-4. **CoinMarketCap API Key**: To retrieve Ethereum price and market cap data, you'll need to obtain an API key from CoinMarketCap: [Sign up here](https://pro.coinmarketcap.com/signup/)
+4. **CoinMarketCap API Key**: To retrieve Ethereum price and market cap data, you'll need to obtain an API key from CoinMarketCap. You can sign up for one [here](https://pro.coinmarketcap.com/signup/).
 
 ## Purpose and Goals of the Application
 
 ### Purpose
 
-The purpose of the Python script is to serve as an interactive tool for users interested in exploring the Ethereum blockchain and monitoring the price of Ethereum (ETH) from CoinMarketCap. It provides the following functions:
+This Python script serves as an interactive tool for users interested in exploring the Ethereum blockchain and monitoring the price of Ethereum (ETH) from CoinMarketCap. It provides the following functions:
 
 ### Goals
 
@@ -42,7 +42,7 @@ The purpose of the Python script is to serve as an interactive tool for users in
 
 6. **Error Handling**: Implement robust error handling to gracefully manage network issues, API errors, and invalid user inputs, enhancing the application's reliability.
 
-The application's primary objective is to empower users to explore Ethereum transactions and monitor Ethereum's real-time price, facilitating a better understanding of the cryptocurrency ecosystem.
+The primary objective of the application is to empower users to explore Ethereum transactions and monitor Ethereum's real-time price, facilitating a better understanding of the cryptocurrency ecosystem.
 
 ## Usage
 
@@ -83,7 +83,7 @@ The technology used in this project is as follows:
 
 2. **Web3**: A Python library for interacting with the Ethereum blockchain. It provides the necessary functionality to connect to an Ethereum node, retrieve blockchain data, and work with Ethereum transactions.
 
-3. **dotenv**: A Python library used for loading environment variables from a `.env` file. It helps securely manage sensitive information like API keys and URLs.
+3. **python-dotenv**: A Python library used for loading environment variables from a `.env` file. It helps securely manage sensitive information like API keys and URLs.
 
 4. **Requests**: A Python library for making HTTP requests. It's used in this script to communicate with the CoinMarketCap API to retrieve Ethereum price and market cap data.
 
@@ -95,7 +95,7 @@ These technologies are integrated to create an application that allows users to 
 
 ## Example Usage
 
-Here is an example of how you can use this script:
+Here's an example of how you can use this script:
 
 1. Enter 'info' to get transaction information for the latest block.
 2. Enter 'price' to get the current Ethereum price and compare it to the latest block.
