@@ -154,17 +154,30 @@ The Ethereum Transaction Viewer application relies on the following Python libra
 
 </details>
 
-To install these dependencies, you can use the following command:
-
-```sh
-pip install -r requirements.txt
-
-## 📝 Testing 
+ ## 📝 Testing 
 
  ### ✅ Validation
 
- - MY run.py passed the [CI Python Linter](https://pep8ci.herokuapp.com/) with no errors.
+ - My run.py passed the [CI Python Linter](https://pep8ci.herokuapp.com/) with no errors.
 
  - *run.py* 
   
    ![Screenshot of the run.py results](assets/images/pep8ci-linter.jpg)
+
+### 🧪 Manual Testing 
+1. Program startup.
+   
+   ![Screenshot of the inital startup](assets/images/program-inital-start.jpg)
+2. User input info.
+
+   ![Screenshot of the inital startup](assets/images/program-user-input-info-result.png)
+3. User input price.
+
+   ![Screenshot of the inital startup](assets/images/program-user-input-price-result.jpg)
+4. User input blocks.
+
+   ![Screenshot of the inital startup](assets/images/program-user-input-blocks-result.jpg)
+   
+
+
+
