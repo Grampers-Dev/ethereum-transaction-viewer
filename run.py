@@ -131,20 +131,77 @@ def calculate_percentage_difference(value1, value2):
     return ((value2 - value1) / value1) * 100
 
 
-if __name__ == "__main__":
+def print_intro():
+    """
+    Print an introduction message to the Ethereum Transaction Viewer.
+    """
     print("Welcome to the Ethereum Transaction Viewer!")
     print("This script allows you to explore Eth blocks and Eth price.")
     print("You can perform the following actions:")
     print("  - Enter 'info' to get transaction info for the latest block.")
     print("  - Enter 'price' Get Ether price and compare to the latest block.")
     print("  - Enter 'blocks' specify number of previous blocks to compare.")
-    print("  - Enter 'exit' to quit the program.")
-    print()
+    print("  - Enter 'exit' to quit the program.\n")
 
+
+def get_latest_block_data():
+    """
+    Get the latest Ethereum block data, including the block and its hash.
+
+    Returns:
+    latest_block: The latest Ethereum block.
+    block_hash: The hash of the latest Ethereum block.
+    """
     latest_block = web3.eth.get_block('latest')
     block_hash = latest_block.hash.hex()
+    return latest_block, block_hash
 
-    print(f"Latest Block Hash: {block_hash}")
+
+def calculate_and_print_block_differences(
+    block_history, num_blocks, latest_ethereum_price, latest_market_cap
+):
+    """
+    Calculate and print the differences for a specified number of blocks.
+    """
+    for i, prev_block_data in enumerate(reversed(block_history[-num_blocks:])):
+        prev_block, prev_ethereum_price, prev_market_cap = prev_block_data
+        price_difference_percentage = calculate_percentage_difference(
+            prev_ethereum_price, latest_ethereum_price)
+        market_cap_difference_percentage = calculate_percentage_difference(
+            prev_market_cap, latest_market_cap)
+        print(
+            f"Percentage Diff in Eth Price with Block {prev_block.number} "
+            f"(Latest vs. {i+1} blocks ago): {price_difference_percentage}"
+        )
+        print(
+            f"Percentage Diff in MarketCap with Block {prev_block.number} "
+            f"(Latest vs. {i+1} blocks ago): {market_cap_diff_percentage}"
+        )
+
+
+def handle_blocks_selection(
+    block_history, latest_ethereum_price, latest_market_cap
+):
+    """
+    Handle 'blocks' selection by prompting the number of previous blocks and
+    then calculating and printing percentage differences.
+    """
+    num_blocks = int(input(
+        "Enter the number of previous blocks to compare: "))
+    if num_blocks <= 0:
+        print("Invalid number of blocks.")
+    else:
+        calculate_and_print_block_differences(
+            block_history, num_blocks, latest_ethereum_price, latest_market_cap
+        )
+
+
+def main():
+    """
+    The main function to run the Ethereum Transaction Viewer.
+    """
+    print_intro()
+    latest_block, block_hash = get_latest_block_data()
     latest_ethereum_data = get_ethereum_price(api_key)
     latest_ethereum_price = latest_ethereum_data["quote"]["USD"]["price"]
     latest_market_cap = latest_ethereum_data["quote"]["USD"]["market_cap"]
@@ -152,20 +209,21 @@ if __name__ == "__main__":
     block_history = []  # Store data from previous blocks
     block_history.append(
         (latest_block, latest_ethereum_price, latest_market_cap))
+
     while True:
         selection = input(
             "Enter 'info' to get transaction info, 'price' to get Eth price, "
             "'blocks' to specify the number of previous blocks to compare, or "
             "'exit' to quit: "
         )
+
         if selection.lower() == 'exit':
             break
         elif selection.lower() == 'info':
             # You can continue to use the existing block_hash
             get_transaction_info(block_hash)
         elif selection.lower() == 'price':
-            new_block = web3.eth.get_block('latest')
-            new_block_hash = new_block.hash.hex()  # Update block_hash here
+            new_block, new_block_hash = get_latest_block_data()
             new_ethereum_data = get_ethereum_price(api_key)
             new_ethereum_price = new_ethereum_data["quote"]["USD"]["price"]
             new_market_cap = new_ethereum_data["quote"]["USD"]["market_cap"]
@@ -188,30 +246,13 @@ if __name__ == "__main__":
 
             # Store data from the new block
             block_history.append(
-              (new_block, new_ethereum_price, new_market_cap))
+                (new_block, new_ethereum_price, new_market_cap))
             block_hash = new_block_hash  # Update block_hash
 
         elif selection.lower() == 'blocks':
-            num_blocks = int(input(
-             "Enter the number of previous blocks to compare: "))
-    if num_blocks <= 0:
-        print("Invalid number of blocks.")
-    else:
-        for i, prev_block_data in enumerate(
-            reversed(block_history[-num_blocks:])
-        ):
-            prev_block, prev_ethereum_price, prev_market_cap = prev_block_data
-            price_difference_percentage = calculate_percentage_difference(
-                prev_ethereum_price, latest_ethereum_price)
-            market_cap_difference_percentage = calculate_percentage_difference(
-                prev_market_cap, latest_market_cap)
-            print(
-                f"Percentage Diff in Eth Price with Block {prev_block.number} "
-                f"(Latest vs. {i+1} blocks ago): "
-                f"{price_difference_percentage}"
-            )
-            print(
-                f"Percentage Diff in MarketCap with Block {prev_block.number} "
-                f"(Latest vs. {i+1} blocks ago): "
-                f"{market_cap_difference_percentage}"
-            )
+            handle_blocks_selection(
+                block_history, latest_ethereum_price, latest_market_cap)
+
+
+if __name__ == "__main__":
+    main()
