@@ -1,6 +1,6 @@
 # Ethereum Transaction Viewer
 
-Welcome to the Ethereum Transaction Viewer! This Python script allows you to explore Ethereum (Eth) blocks and Ethereum price using the Web3 library and CoinMarketCap API. You can perform the following actions:
+Welcome to the Ethereum Transaction Viewer! This Python script allows you to explore Ethereum (ETH) blocks and Ethereum price using the Web3 library and CoinMarketCap API. You can perform the following actions:
 
 - Get transaction information for the latest block.
 - Retrieve the current Ethereum price and compare it to the latest block.
@@ -44,7 +44,6 @@ The purpose of the Python script is to serve as an interactive tool for users in
 
 The application's primary objective is to empower users to explore Ethereum transactions and monitor Ethereum's real-time price, facilitating a better understanding of the cryptocurrency ecosystem.
 
-
 ## Usage
 
 Upon running the script, you will be presented with the following options:
@@ -75,6 +74,24 @@ Retrieves Ethereum price and market cap data from CoinMarketCap API using your A
 ### `calculate_percentage_difference(value1, value2)`
 
 Calculates the percentage difference between two values.
+
+## Technology Used
+
+The technology used in this project is as follows:
+
+1. **Python**: The primary programming language for developing the script.
+
+2. **Web3**: A Python library for interacting with the Ethereum blockchain. It provides the necessary functionality to connect to an Ethereum node, retrieve blockchain data, and work with Ethereum transactions.
+
+3. **dotenv**: A Python library used for loading environment variables from a `.env` file. It helps securely manage sensitive information like API keys and URLs.
+
+4. **Requests**: A Python library for making HTTP requests. It's used in this script to communicate with the CoinMarketCap API to retrieve Ethereum price and market cap data.
+
+5. **Infura**: Infura provides Ethereum nodes as a service. It's likely used as the Ethereum node provider for interacting with the Ethereum blockchain.
+
+6. **CoinMarketCap API**: The script uses the CoinMarketCap API to obtain real-time data on Ethereum's price and market capitalization. Users need an API key from CoinMarketCap to access this data.
+
+These technologies are integrated to create an application that allows users to explore Ethereum transactions and monitor the real-time price of Ethereum.
 
 ## Example Usage
 
