@@ -75,19 +75,27 @@ Calculates the percentage difference between two values.
 
 ## Technology Used
 
-The technology used in this project is as follows:
+###The technology used in this project is as follows:
 
-- **Python:** The primary programming language for developing the script.
+- [Python](https://en.wikipedia.org/wiki/Python_(programming_language)) Python is a versatile and high-level programming language known for its simplicity and readability, suitable for a wide range of applications.
 
-- **Web3:** A Python library for interacting with the Ethereum blockchain. It provides the necessary functionality to connect to an Ethereum node, retrieve blockchain data, and work with Ethereum transactions.
+- [Code Institute Python Essentials Template](https://github.com/Code-Institute-Org/p3-template) - GitHub repository template used to create the repository.
 
-- **python-dotenv:** A Python library used for loading environment variables from a .env file. It helps securely manage sensitive information like API keys and URLs.
+- [Visual Studio Code](https://code.visualstudio.com/) - source code editor used to create, edit and publish the webpages with the assistance of Git/GitHub/GitPages.
 
-- **Requests:** A Python library for making HTTP requests. It's used in this script to communicate with the CoinMarketCap API to retrieve Ethereum price and market cap data.
+- [Heroku](https://heroku.com/) - Cloud application hosting service.
 
-- **Infura:** Infura provides Ethereum nodes as a service. It's likely used as the Ethereum node provider for interacting with the Ethereum blockchain.
+- [GitHub](https://github.com/) - Git repository hosting service with a web-based graphical interface.
 
-- **CoinMarketCap API:** The script uses the CoinMarketCap API to obtain real-time data on Ethereum's price and market capitalization. Users need an API key from CoinMarketCap to access this data.
+- [Web3](https://pypi.org/project/web3/) A Python library for interacting with the Ethereum blockchain. It provides the necessary functionality to connect to an Ethereum node, retrieve blockchain data, and work with Ethereum transactions.
+
+- [Python-Dotenv](https://pypi.org/project/python-dotenv/) A Python library used for loading environment variables from a .env file. It helps securely manage sensitive information like API keys and URLs.
+
+- [Requests](https://pypi.org/project/requests/) A Python library for making HTTP requests. It's used in this script to communicate with the CoinMarketCap API to retrieve Ethereum price and market cap data.
+
+- [Infura](https://www.infura.io/) Infura provides Ethereum nodes as a service. It's likely used as the Ethereum node provider for interacting with the Ethereum blockchain.
+
+- [CoinMarketCap](https://pro.coinmarketcap.com/) The script uses the CoinMarketCap API to obtain real-time data on Ethereum's price and market capitalization. Users need an API key from CoinMarketCap to access this data.
 
 These technologies are integrated to create an application that allows users to explore Ethereum transactions and monitor the real-time price of Ethereum.
 
