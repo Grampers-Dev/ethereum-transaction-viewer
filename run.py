@@ -175,7 +175,8 @@ def calculate_and_print_block_differences(
         )
         print(
             f"Percentage Diff in MarketCap with Block {prev_block.number} "
-            f"(Latest vs. {i+1} blocks ago): {market_cap_diff_percentage}"
+            f"(Latest vs. {i+1} blocks ago): "
+            f"{market_cap_difference_percentage}"
         )
 
 
