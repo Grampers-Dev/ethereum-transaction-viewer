@@ -1,4 +1,5 @@
 # Ethereum Transaction Viewer
+![Devices Preview](assets/images/responsive-layout.png)
 
 Welcome to the Ethereum Transaction Viewer! This Python script enables you to explore Ethereum (ETH) blocks and Ethereum's price using the Web3 library and CoinMarketCap API. You can perform the following actions:
 
@@ -158,11 +159,12 @@ To install these dependencies, you can use the following command:
 ```sh
 pip install -r requirements.txt
 
-## Example Usage
+## 📝 Testing 
 
-Here's an example of how you can use this script:
+ ### ✅ Validation
 
-1. Enter 'info' to get transaction information for the latest block.
-2. Enter 'price' to get the current Ethereum price and compare it to the latest block.
-3. Enter 'blocks' to specify the number of previous blocks to compare.
-4. Enter 'exit' to quit the program.
+ - MY run.py passed the [CI Python Linter](https://pep8ci.herokuapp.com/) with no errors.
+
+ - *run.py* 
+  
+   ![Screenshot of the run.py results](assets/images/pep8ci-linter.jpg)
