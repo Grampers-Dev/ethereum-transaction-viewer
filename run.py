@@ -12,6 +12,35 @@ web3 = Web3(Web3.HTTPProvider(infura_url))
 api_key = os.getenv("CMC_API_KEY")
 
 
+def compare_block_with_price(latest_ethereum_price):
+    user_block_hash = input("Enter the block hash you want to compare: ")
+    try:
+        tx = web3.eth.get_transaction_by_block(user_block_hash, 2)
+        if tx:
+            display_transaction_info(tx)
+
+            # Fetch Ethereum price data for comparison
+            new_ethereum_data = get_ethereum_price(api_key)
+            if new_ethereum_data:
+                new_ethereum_price = new_ethereum_data["quote"]["USD"]["price"]
+
+                # Calculate percentage difference with the entered block
+                price_difference_percentage = calculate_percentage_difference(
+                    new_ethereum_price, latest_ethereum_price)
+
+                print("Percentage Diff in Ethereum Price with Entered Block:",
+                      price_difference_percentage)
+            else:
+                print("Error: Unable to fetch Ethereum price data.")
+        else:
+            print("Transaction not found.")
+    except Exception as e:
+        print("Error:", e)
+
+
+
+
+
 def get_latest_block_hash():
     """
     Get the hash of the latest Ethereum block.
@@ -153,6 +182,7 @@ def print_intro():
     print("  - Enter 'info' to get transaction info for the latest block.")
     print("  - Enter 'price' Get Ether price and compare to the latest block.")
     print("  - Enter 'blocks' specify number of previous blocks to compare.")
+    print("  - Enter 'blockhash' to compare a specific block.")
     print("  - Enter 'exit' to quit the program.\n")
 
 
@@ -223,11 +253,13 @@ def main():
     block_history.append(
         (latest_block, latest_ethereum_price, latest_market_cap))
 
+    new_ethereum_price = None  # Initialize new_ethereum_price
+
     while True:
         selection = input(
-            "Enter 'info' to get transaction info, 'price' to get Eth price, "
-            "'blocks' to specify the number of previous blocks to compare, or "
-            "'exit' to quit: "
+            "Enter 'info' get transaction info, 'price' to get Eth price, "
+            "'blocks' to specify the number of previous blocks to compare, "
+            "'blockhash' to compare a specific block, or 'exit' to quit: "
         )
 
         if selection.lower() == 'exit':
@@ -268,8 +300,7 @@ def main():
             handle_blocks_selection(
                 block_history, latest_ethereum_price, latest_market_cap)
         elif selection.lower() == 'blockhash':
-            latest_block_hash = get_latest_block_hash()
-            print(f"Latest Block Hash: {latest_block_hash}")
+            compare_block_with_price(new_ethereum_price)
 
 
 if __name__ == "__main__":
