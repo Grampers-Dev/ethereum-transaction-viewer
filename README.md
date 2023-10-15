@@ -111,6 +111,10 @@ Calculates the percentage difference between two values.
 
 These technologies are integrated to create an application that allows users to explore Ethereum transactions and monitor the real-time price of Ethereum.
 
+## Bugs
+
+- Error in indentation for the blocks loop, the programme would not function as intended.
+
 ## 📦 Dependencies
 
 The Ethereum Transaction Viewer application relies on the following Python libraries and packages. To ensure proper functionality, make sure to install these dependencies in your environment:
@@ -153,7 +157,6 @@ To install these dependencies, you can use the following command:
 
 ```sh
 pip install -r requirements.txt
-
 
 ## Example Usage
 
