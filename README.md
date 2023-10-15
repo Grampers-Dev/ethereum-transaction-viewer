@@ -111,6 +111,50 @@ Calculates the percentage difference between two values.
 
 These technologies are integrated to create an application that allows users to explore Ethereum transactions and monitor the real-time price of Ethereum.
 
+## 📦 Dependencies
+
+The Ethereum Transaction Viewer application relies on the following Python libraries and packages. To ensure proper functionality, make sure to install these dependencies in your environment:
+
+<details>
+<summary>Click here to view the list of dependencies</summary>
+
+- aiohttp==3.8.6
+- aiosignal==1.3.1
+- async-timeout==4.0.3
+- bitarray==2.8.2
+- cytoolz==0.12.2
+- eth-abi==4.2.1
+- eth-account==0.9.0
+- eth-hash==0.5.2
+- eth-keyfile==0.6.1
+- eth-keys==0.4.0
+- eth-rlp==0.3.0
+- eth-typing==3.5.0
+- eth-utils==2.2.2
+- frozenlist==1.4.0
+- hexbytes==0.3.1
+- lru-dict==1.2.0
+- multidict==6.0.4
+- parsimonious==0.9.0
+- protobuf==4.24.4
+- pycryptodome==3.19.0
+- pyunormalize==15.0.0
+- regex==2023.10.3
+- rlp==3.0.0
+- toolz==0.12.0
+- web3==6.11.0
+- websockets==11.0.3
+- yarl==1.9.2
+- python-dotenv==0.17.1
+
+</details>
+
+To install these dependencies, you can use the following command:
+
+```sh
+pip install -r requirements.txt
+
+
 ## Example Usage
 
 Here's an example of how you can use this script:
