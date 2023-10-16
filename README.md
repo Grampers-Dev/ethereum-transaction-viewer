@@ -6,6 +6,7 @@ Welcome to the Ethereum Transaction Viewer! This Python script enables you to ex
 - Get transaction information for the latest block.
 - Retrieve the current Ethereum price and compare it to the latest block.
 - Specify the number of previous blocks to compare with the latest block.
+- Enter blockhash to compare a specific block.
 - Exit the program.
 
 
@@ -67,6 +68,10 @@ Converts an amount in Wei to Ether.
 ### `get_ethereum_price(api_key)`
 
 Retrieves Ethereum price and market cap data from CoinMarketCap API using your API key.
+
+### `compare_block_with_price(latest_ethereum_price)`
+
+Compare the Ethereum price with a user-specified block.
 
 ### `calculate_percentage_difference(value1, value2)`
 

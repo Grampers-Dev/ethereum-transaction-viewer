@@ -13,6 +13,34 @@ api_key = os.getenv("CMC_API_KEY")
 
 
 def compare_block_with_price(latest_ethereum_price):
+    """
+    Compare the Ethereum price with a user-specified block.
+
+    This function allows the user to enter a block hash
+    and compares the Ethereum price
+    at that block with the latest Ethereum price.
+    It performs the following steps:
+
+    1. Prompt the user to enter the block hash they want to compare.
+    2. Retrieve the transaction data for the specified block.
+    3. If the block exists, display its transaction information.
+    4. Fetch the latest Ethereum price data.
+    5. Calculate the percentage difference in Ethereum price
+    between the entered block
+       and the latest Ethereum price.
+    6. Print the percentage difference.
+
+    Parameters:
+    latest_ethereum_price (float): The latest Ethereum price.
+
+    Returns:
+    None
+
+    Raises:
+    Exception: If there is an error during the comparison process,
+    an exception is raised
+    and an error message is displayed.
+    """
     user_block_hash = input("Enter the block hash you want to compare: ")
     try:
         tx = web3.eth.get_transaction_by_block(user_block_hash, 2)
