@@ -38,9 +38,6 @@ def compare_block_with_price(latest_ethereum_price):
         print("Error:", e)
 
 
-
-
-
 def get_latest_block_hash():
     """
     Get the hash of the latest Ethereum block.

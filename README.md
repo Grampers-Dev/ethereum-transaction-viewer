@@ -8,20 +8,6 @@ Welcome to the Ethereum Transaction Viewer! This Python script enables you to ex
 - Specify the number of previous blocks to compare with the latest block.
 - Exit the program.
 
-## Prerequisites
-
-Before using this script, please ensure you have the following prerequisites in place:
-
-- **Python:** Make sure you have Python installed on your system. You can download Python from the [official website](https://www.python.org/).
-
-- **Required Python Libraries:**
-    - web3: You can install it using pip: `pip install web3`
-    - python-dotenv: Install using `pip install python-dotenv`
-    - requests: Install using `pip install requests`
-
-- **Ethereum Node:** You need access to an Ethereum node to use the Web3 library. You can either run a local Ethereum node or use an external node provider.
-
-- **CoinMarketCap API Key:** To retrieve Ethereum price and market cap data, you'll need to obtain an API key from CoinMarketCap. You can sign up for one [here](https://coinmarketcap.com/).
 
 ## Purpose and Goals of the Application
 
@@ -115,6 +101,82 @@ These technologies are integrated to create an application that allows users to 
 ## Bugs
 
 - Error in indentation for the blocks loop, the programme would not function as intended.
+
+# Ethereum Transaction Viewer Deployment Guide
+
+This guide will walk you through the deployment process for the Ethereum Transaction Viewer script. This script allows you to explore Ethereum blocks and compare Ethereum prices with different blocks.
+
+## Prerequisites
+
+Before deploying the Ethereum Transaction Viewer, make sure you have the following prerequisites installed on your system:
+
+- Python (3.6 or higher)
+- `pip` (Python package manager)
+- `git` (optional for cloning the repository)
+- An Infura API key
+- A CoinMarketCap API key
+
+## Deployment Steps
+
+1. **Clone or Download the Repository**
+
+    You can either clone the GitHub repository or download the script directly. Here's how to clone the repository:
+
+    ```bash
+    git clone https://github.com/grampers-dev/ethereum-transaction-viewer.git
+    ```
+
+2. **Navigate to the Project Directory**
+
+    Change your current working directory to the project directory:
+
+    ```bash
+    cd ethereum-transaction-viewer
+    ```
+
+3. **Install Required Python Packages**
+
+    Use `pip` to install the necessary Python packages listed in the `requirements.txt` file:
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+4. **Create a `.env.apikeys` File**
+
+    Create a file named `.env.apikeys` in the project directory. This file will store your API keys for Infura and CoinMarketCap. Open the file in a text editor and add the following content:
+
+    ```plaintext
+    INFURA_URL=https://mainnet.infura.io/v3/your-infura-api-key
+    CMC_API_KEY=your-coinmarketcap-api-key
+    ```
+
+    Replace `your-infura-api-key` and `your-coinmarketcap-api-key` with your actual API keys.
+
+5. **Run the Script**
+
+    You can now run the Ethereum Transaction Viewer script:
+
+    ```bash
+    python ethereum_transaction_viewer.py
+    ```
+
+    Follow the on-screen instructions to interact with the script. You can explore Ethereum blocks, compare prices, and more.
+
+6. **Usage**
+
+    - Enter `info` to get transaction information for the latest block.
+    - Enter `price` to fetch Ethereum price and compare it to the latest block.
+    - Enter `blocks` to specify the number of previous blocks to compare.
+    - Enter `blockhash` to compare a specific block.
+    - Enter `exit` to quit the program.
+
+## Conclusion
+
+You have successfully deployed the Ethereum Transaction Viewer on your local machine. You can now explore Ethereum blocks and analyze transaction data. If you plan to deploy this script in a production environment, consider additional security and scalability measures.
+
+Enjoy using the Ethereum Transaction Viewer!
+
 
 ## 📦 Dependencies
 
