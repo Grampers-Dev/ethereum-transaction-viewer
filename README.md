@@ -79,7 +79,7 @@ Calculates the percentage difference between two values.
 
 ## Technology Used
 
-###The technology used in this project is as follows:
+The technology used in this project is as follows:
 
 - [Python](https://en.wikipedia.org/wiki/Python_(programming_language)) - Python is a versatile and high-level programming language known for its simplicity and readability, suitable for a wide range of applications.
 
