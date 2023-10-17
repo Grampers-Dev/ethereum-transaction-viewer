@@ -107,6 +107,8 @@ These technologies are integrated to create an application that allows users to 
 
 - Error in indentation for the blocks loop, the programme would not function as intended.
 
+- Fixed this error by placing indentation where it should have been.
+
 # Ethereum Transaction Viewer Deployment Guide
 
 This guide will walk you through the deployment process for the Ethereum Transaction Viewer script. This script allows you to explore Ethereum blocks and compare Ethereum prices with different blocks.
@@ -252,6 +254,9 @@ The Ethereum Transaction Viewer application relies on the following Python libra
 
    ![Screenshot of blockhash](assets/images/program-user-input-blockhash-result.jpg)
 
+## Live site hosted on Heroku.
+
+- [Ethereum Transaction Viewer](https://ethereum-transaction-viewer-d502c87253fb.herokuapp.com/)
    
 
 
